@@ -9,6 +9,7 @@
         <item>AUD</item>
         <item>GBP</item>
     </string-array>
+    <string name="Toast">No amount specified</string>
     <string name="Swap">SWAP</string>
     <string name="Convert">CONVERT</string>
     <string name="Amount">Amount</string>

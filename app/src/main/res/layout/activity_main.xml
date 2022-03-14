@@ -22,8 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/CurrencyConverter"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:id="@+id/currencyOneHorizontalLayout"
@@ -55,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/Amount"
                 android:textAlignment="textEnd"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
         </LinearLayout>
 
@@ -89,7 +88,7 @@
                 android:textAlignment="textEnd"
                 android:hint="@string/Conversion"
                 android:enabled="false"
-                android:inputType="number"/>
+                android:inputType="numberDecimal"/>
 
         </LinearLayout>
 
