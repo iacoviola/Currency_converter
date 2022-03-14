@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Currency converter</string>
+    <string name="CurrencyConverter">Currency\nConverter</string>
+    <string-array name="currencies">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <item>CAD</item>
+        <item>AUD</item>
+    </string-array>
+    <string name="Swap">SWAP</string>
+    <string name="Convert">CONVERT</string>
+    <string name="Amount">Amount</string>
+    <string name="Conversion">Conversion</string>
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/mainVerticalLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="25dp">
+
+        <TextView
+            android:id="@+id/currencyConverterTextEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/CurrencyConverter"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:id="@+id/currencyOneHorizontalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:textAlignment="textEnd">
+
+            <!-- <TextView
+                android:id="@+id/currencyOneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Dollars"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/> -->
+
+            <Spinner
+                android:id="@+id/currencyOneSpinner"
+                android:layout_width="90dp"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/currencyOneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/Amount"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/currencyTwoHorizontalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <!-- <TextView
+                android:id="@+id/currencyTwoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Euros"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/> -->
+
+            <Spinner
+                android:id="@+id/currencyTwoSpinner"
+                android:layout_width="90dp"
+                android:spinnerMode="dropdown"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/currencyTwoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:hint="@string/Conversion"
+                android:enabled="false"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonsHorizontalLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/swapButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Swap"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/convertButton"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/Convert"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
