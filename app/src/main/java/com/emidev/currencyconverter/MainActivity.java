@@ -2,7 +2,9 @@ package com.emidev.currencyconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -65,7 +67,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 String currencyOne = currencyOneSpinner.getSelectedItem().toString();
                 String currencyTwo = currencyTwoSpinner.getSelectedItem().toString();
+                double amount = Double.parseDouble(currencyOneEditText.getText().toString());
 
+                Locator loc = new Locator(currencyOne, currencyTwo, amount);
+
+                Thread request = new Thread(loc);
+
+                request.start();
+                try {
+                    request.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                currencyTwoEditText.setText(String.format(java.util.Locale.US, "%.2f", loc.getConversion()));
             }
         });
     }
