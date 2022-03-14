@@ -45,6 +45,8 @@
             <Spinner
                 android:id="@+id/currencyOneSpinner"
                 android:layout_width="90dp"
+                android:padding="-10dp"
+                android:textAlignment="textStart"
                 android:layout_height="match_parent" />
 
             <EditText
@@ -75,7 +77,8 @@
             <Spinner
                 android:id="@+id/currencyTwoSpinner"
                 android:layout_width="90dp"
-                android:spinnerMode="dropdown"
+                android:padding="-10dp"
+                android:textAlignment="textStart"
                 android:layout_height="match_parent" />
 
             <EditText
@@ -96,14 +99,14 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <Button
+            <!-- <Button
                 android:id="@+id/swapButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Swap"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="10dp"/> -->
 
             <Button
                 android:id="@+id/convertButton"
@@ -111,8 +114,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Convert"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp"/>
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

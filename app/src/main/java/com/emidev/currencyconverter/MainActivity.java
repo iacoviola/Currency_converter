@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button swapButton = findViewById(R.id.swapButton);
+        //Button swapButton = findViewById(R.id.swapButton);
         Button convertButton = findViewById(R.id.convertButton);
 
         Spinner currencyOneSpinner = findViewById(R.id.currencyOneSpinner);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         EditText currencyOneEditText = findViewById(R.id.currencyOneEditText);
         EditText currencyTwoEditText = findViewById(R.id.currencyTwoEditText);
 
-        swapButton.setOnClickListener(new View.OnClickListener() {
+        /* swapButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v){
@@ -57,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+        });*/
+
+        convertButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v){
+                String currencyOne = currencyOneSpinner.getSelectedItem().toString();
+                String currencyTwo = currencyTwoSpinner.getSelectedItem().toString();
+
+            }
         });
     }
 }
