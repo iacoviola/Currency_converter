@@ -14,4 +14,5 @@
     <string name="Convert">CONVERT</string>
     <string name="Amount">Amount</string>
     <string name="Conversion">Conversion</string>
+    <string name="loading">Loading...</string>
 </resources>

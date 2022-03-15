@@ -2,30 +2,27 @@ package com.emidev.currencyconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    double currencyOne, currencyTwo;
-    boolean isDollarsCurrencyOne = true;
-    String last = "";
+    String last = null;
 
-    //Metodo giusto per fare una funzione ?
-    //Si può/dovrebbe fare ?
+    /*  Metodo giusto per fare una funzione,
+        si può/dovrebbe fare ? */
     private void convert(Spinner cOS, Spinner cTS, EditText cOET, EditText cTET) {
-        if(cOET.getText().toString().equals(last))
+        if(cOET.getText().toString().isEmpty() || cOET.getText().toString().equals(last))
             return;
         String currencyOne = cOS.getSelectedItem().toString();
         String currencyTwo = cTS.getSelectedItem().toString();
@@ -39,14 +36,22 @@ public class MainActivity extends AppCompatActivity {
         Locator loc = new Locator(currencyOne, currencyTwo, amount);
 
         Thread request = new Thread(loc);
-
         request.start();
+
+        AlertDialog.Builder builder =  new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.loading_dialog, null));
+        builder.setCancelable(true);
+        AlertDialog alert;
+        alert  = builder.create();
+        alert.show();
+
         try {
             request.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        alert.dismiss();
         cTET.setText(String.format(java.util.Locale.US, "%.2f", loc.getConversion()));
         last = String.format(java.util.Locale.US, "%.2f", loc.getConversion());
     }
