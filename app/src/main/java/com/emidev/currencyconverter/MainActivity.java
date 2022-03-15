@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     /*  Metodo giusto per fare una funzione,
         si può/dovrebbe fare ? */
     private void convert(Spinner cOS, Spinner cTS, EditText cOET, EditText cTET) {
-        if(cOET.getText().toString().isEmpty() || cOET.getText().toString().equals(last))
+        if(cOET.getText().toString().equals(last))
             return;
         String currencyOne = cOS.getSelectedItem().toString();
         String currencyTwo = cTS.getSelectedItem().toString();
