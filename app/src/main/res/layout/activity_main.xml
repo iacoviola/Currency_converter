@@ -100,14 +100,14 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <!-- <Button
+            <Button
                 android:id="@+id/swapButton"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Swap"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginEnd="10dp"/> -->
+                android:layout_marginEnd="10dp"/>
 
             <Button
                 android:id="@+id/convertButton"
@@ -115,7 +115,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Convert"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"/>
 
         </LinearLayout>
 
